@@ -1,1 +1,41 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>モンゴル国内の大学</title>
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="manifest.json">
+
+    <!-- PWAテーマカラー -->
+    <meta name="theme-color" content="#007bff">
+
+    <!-- アイコン -->
+    <link rel="apple-touch-icon" href="icons/icon-192x192.png">
+
+    <!-- セキュリティポリシー -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; connect-src 'self'; img-src 'self'; style-src 'self'; script-src 'self';">
+</head>
+<body>
+    <div class="app">
+        <h1>モンゴル国内の大学</h1>
+        <div class="university-list">
+            <!-- JavaScriptで動的にリストを生成 -->
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+
+    <!-- Service Workerを登録 -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('service-worker.js')
+            .then(() => console.log('Service Worker が登録されました'))
+            .catch(err => console.error('Service Worker の登録に失敗しました:', err));
+        }
+    </script>
+</body>
+</html>
 
